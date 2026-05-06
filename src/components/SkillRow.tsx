@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
+import TechIcon from "./TechIcon";
+import type { TechItem } from "@/data/tech";
 
 const SkillRow = ({
   skills,
   direction,
 }: {
-  skills: string[];
+  skills: TechItem[];
   direction: "left" | "right";
 }) => (
   <div className="overflow-hidden">
@@ -15,15 +17,11 @@ const SkillRow = ({
     >
       {[...skills, ...skills].map((skill, i) => (
         <span
-          key={i}
+          key={`${skill.name}-${i}`}
           className="inline-flex items-center gap-2 px-4 py-1 bg-card rounded-lg border border-dashed whitespace-nowrap"
         >
-          <img
-            src={`https://cdn.simpleicons.org/${skill.toLowerCase().replace(/[\s/]/g, "")}`}
-            className="w-4 h-4"
-            alt={skill}
-          />
-          {skill}
+          <TechIcon item={skill} className="w-4 h-4" />
+          {skill.name}
         </span>
       ))}
     </motion.div>
