@@ -1,5 +1,7 @@
-import MainPage from "./components/MainPage";
+import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import ProjectSection from "./components/ProjectSection";
+import SkillSection from "./components/SkillSection";
 
 const App = () => {
   return (
@@ -10,12 +12,17 @@ const App = () => {
           backgroundImage:
             "linear-gradient(to right, var(--border) 1px, transparent 1px), linear-gradient(to bottom, var(--border) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
-          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
+          maskImage:
+            "radial-gradient(ellipse at center, black 40%, transparent 80%)",
         }}
       />
       <div className="relative z-10 flex flex-col flex-1">
         <Navbar />
-        <MainPage />
+        <main className="mx-auto w-full max-w-3xl px-6 sm:space-y-1">
+          <Hero />
+          <SkillSection />
+          <ProjectSection />
+        </main>
       </div>
     </div>
   );

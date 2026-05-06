@@ -1,16 +1,15 @@
 import { BadgeCheck, BookText, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
-import SkillRow from "./SkillRow";
-import ProjectCard from "./ProjectCard";
-import { projects } from "@/data/projects";
 import TechIcon from "./TechIcon";
-import { skillRows, skills } from "@/data/tech";
+import { skills } from "@/data/tech";
 import { socials } from "@/data/socials";
 import SocialIcon from "./SocialIcon";
-const MainPage = () => {
+const Hero = () => {
   return (
-    <main className="mx-auto w-full max-w-3xl px-6" id="home">
-      <section className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-12 sm:py-16">
+    <section
+      className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-12 sm:py-16"
+      id="home"
+    >
         <div className="space-y-5 sm:space-y-10">
           <div className="flex items-center mb-8 gap-[14px] sm:gap-[20px]">
             <div>
@@ -28,7 +27,7 @@ const MainPage = () => {
                   <BadgeCheck color="currentColor" fill="#3b82f6" size={28} />
                 </span>
               </h1>
-              <div className="flex items-left gap-2 sm:gap-3">
+              <div className="flex items-start gap-2 sm:gap-3">
                 {socials.map(({ name, icon, darkIcon, href }) => (
                   <a
                     key={name}
@@ -90,37 +89,8 @@ const MainPage = () => {
             </div>
           </div>
         </div>
-      </section>
-      <section id="skills" className="max-w-3xl space-y-6 pb-24">
-        <div className="flex gap-3">
-          <span className="text-3xl font-bold">|</span>
-          <p className="text-3xl font-semibold">My Stack</p>
-        </div>
-        <div className="relative flex flex-col gap-4">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 z-10 bg-linear-to-r from-background to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 z-10 bg-linear-to-l from-background to-transparent" />
-          {skillRows.map((row) => (
-            <SkillRow
-              key={`${row.direction}-${row.items[0].name}`}
-              skills={row.items}
-              direction={row.direction}
-            />
-          ))}
-        </div>
-      </section>
-      <section id="projects" className="space-y-6 pb-24">
-        <div className="flex gap-3">
-          <span className="text-3xl font-bold">|</span>
-          <p className="text-3xl font-semibold">Projects</p>
-        </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} {...project} />
-          ))}
-        </div>
-      </section>
-    </main>
+    </section>
   );
 };
 
-export default MainPage;
+export default Hero;
