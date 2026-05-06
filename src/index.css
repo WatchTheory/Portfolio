@@ -55,6 +55,8 @@
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+  --scrollbar-thumb: hsl(0 0% 42% / 0.35);
+  --scrollbar-thumb-hover: hsl(0 0% 32% / 0.5);
 }
 
 .dark {
@@ -108,6 +110,8 @@
   --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
   --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --scrollbar-thumb: hsl(0 0% 58% / 0.28);
+  --scrollbar-thumb-hover: hsl(0 0% 68% / 0.4);
 }
 
 @theme inline {
@@ -167,8 +171,34 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scrollbar-width: none;
+    scrollbar-gutter: stable;
+  }
+
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  .react-activity-calendar__tooltip {
+    z-index: 80;
+  }
+
+  .react-activity-calendar__count {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted-foreground);
+    line-height: 1.35;
   }
 }
 

@@ -20,6 +20,7 @@ const themes = [
 const Navbar = () => {
   const location = useLocation();
   const { theme, setTheme } = useTheme();
+  const currentTheme = theme ?? "system";
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur supports-backdrop-filter:bg-foregr/70">
@@ -59,8 +60,7 @@ const Navbar = () => {
 
         <div className="flex shrink-0 items-center">
           <Tabs
-            defaultValue="system"
-            value={theme}
+            value={currentTheme}
             onValueChange={(v) => setTheme(v as "light" | "dark" | "system")}
           >
             <TabsList className="flex rounded-full border border-border/70 bg-muted/30 gap-1 p-1">
