@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import { ActivityCalendar, type Activity } from "react-activity-calendar";
 import { cn } from "@/lib/utils";
@@ -41,11 +41,31 @@ const Stats = ({ year: initialYear = 2025 }: StatsProps) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [year, setYear] = useState<StatsProps["year"]>(initialYear);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const currentYear = new Date().getFullYear();
   const yearOptions: number[] = Array.from(
     { length: Math.max(currentYear - 2025 + 1, 1) },
     (_, index) => currentYear - index,
   );
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    setTimeout(() => {
+      el.scrollLeft = el.scrollWidth;
+    }, 10);
+
+    const onWheel = (e: WheelEvent) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+      }
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [data]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -58,8 +78,9 @@ const Stats = ({ year: initialYear = 2025 }: StatsProps) => {
         setLoading(true);
         setError(null);
 
+        const apiYear = year === currentYear ? "last" : year;
         const res = await fetch(
-          `https://github-contributions-api.jogruber.de/v4/charanmunur?y=${year}`,
+          `https://github-contributions-api.jogruber.de/v4/charanmunur?y=${apiYear}`,
           { signal: controller.signal },
         );
 
@@ -95,7 +116,7 @@ const Stats = ({ year: initialYear = 2025 }: StatsProps) => {
   }, [year]);
 
   return (
-    <section id="stats" className="w-full space-y-6 pb-20">
+    <section id="stats" className="w-full space-y-3">
       <div className="flex flex-col gap-3 pb-3 sm:flex-row sm:items-end sm:justify-between">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-3">
@@ -104,7 +125,7 @@ const Stats = ({ year: initialYear = 2025 }: StatsProps) => {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 text-sm">
+        <div className="flex flex-wrap items-center gap-2 text-sm ">
           {yearOptions.map((option) => {
             const isActive = year === option;
 
@@ -126,7 +147,7 @@ const Stats = ({ year: initialYear = 2025 }: StatsProps) => {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-border/80 bg-card p-4 pb-3 sm:p-6 sm:pb-4">
+      <div className="rounded-2xl border border-dashed border-border/80 bg-card p-4 pb-3 sm:p-6 sm:pb-4">
         {loading ? (
           <p className="text-sm text-muted-foreground">
             Loading GitHub stats...
@@ -135,42 +156,62 @@ const Stats = ({ year: initialYear = 2025 }: StatsProps) => {
           <p className="text-sm text-muted-foreground">{error}</p>
         ) : (
           <div className="space-y-3">
-            <ActivityCalendar
-              data={data}
-              className="bg-card"
-              style={{ backgroundColor: "var(--card)" }}
-              colorScheme={
-                resolvedTheme === "dark"
-                  ? "dark"
-                  : resolvedTheme === "light"
-                    ? "light"
-                    : undefined
-              }
-              theme={{
-                light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
-                dark: ["#212121", "#0e4429", "#006d32", "#26a641", "#39d353"],
-              }}
-              blockSize={11}
-              blockMargin={5}
-              blockRadius={3}
-              fontSize={12}
-              showWeekdayLabels
-              showColorLegend={false}
-              showTotalCount={false}
-              tooltips={{
-                activity: {
-                  placement: "top",
-                  withArrow: true,
-                  offset: { mainAxis: 10 },
-                  text: (activity) =>
-                  `${formatActivityDate(activity.date)} • ${activity.count} contribution${activity.count === 1 ? "" : "s"}`,
-                },
-              }}
-              />
+            <div
+              ref={scrollRef}
+              className="w-full overflow-x-auto pb-42[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            >
+              <div className="min-w-max">
+                <ActivityCalendar
+                  data={data}
+                  className="bg-card"
+                  style={{ backgroundColor: "var(--card)" }}
+                  colorScheme={
+                    resolvedTheme === "dark"
+                      ? "dark"
+                      : resolvedTheme === "light"
+                        ? "light"
+                        : undefined
+                  }
+                  theme={{
+                    light: [
+                      "#ebedf0",
+                      "#9be9a8",
+                      "#40c463",
+                      "#30a14e",
+                      "#216e39",
+                    ],
+                    dark: [
+                      "#212121",
+                      "#0e4429",
+                      "#006d32",
+                      "#26a641",
+                      "#39d353",
+                    ],
+                  }}
+                  blockSize={11}
+                  blockMargin={5}
+                  blockRadius={3}
+                  fontSize={12}
+                  showWeekdayLabels
+                  showColorLegend={false}
+                  showTotalCount={false}
+                  tooltips={{
+                    activity: {
+                      placement: "top",
+                      withArrow: true,
+                      offset: { mainAxis: 10 },
+                      text: (activity) =>
+                        `${formatActivityDate(activity.date)} • ${activity.count} contribution${activity.count === 1 ? "" : "s"}`,
+                    },
+                  }}
+                />
+              </div>
+            </div>
             <div className="flex items-center justify-between text-[11px] text-muted-foreground">
               <span className="text-sm font-semibold">
                 {data.reduce((sum, activity) => sum + activity.count, 0)}{" "}
-                contributions in {year}
+                contributions{" "}
+                {year === currentYear ? "in the last year" : `in ${year}`}
               </span>
               <span>Scroll horizontal to view</span>
             </div>

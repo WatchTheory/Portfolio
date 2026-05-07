@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import ProjectSection from "./components/ProjectSection";
@@ -19,11 +20,12 @@ const App = () => {
       />
       <div className="relative z-10 flex flex-col flex-1">
         <Navbar />
-        <main className="mx-auto w-full max-w-3xl px-6 sm:space-y-1">
+        <main className="mx-auto flex w-full max-w-3xl flex-col gap-20 px-6 pb-12 sm:gap-20 sm:pb-20">
           <Hero />
           <SkillSection />
           <ProjectSection />
           <Stats />
+          <Footer />
         </main>
       </div>
     </div>

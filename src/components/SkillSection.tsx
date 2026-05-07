@@ -3,7 +3,7 @@ import { skillRows } from "@/data/tech";
 
 const SkillSection = () => {
   return (
-    <section id="skills" className="w-full space-y-6 pb-24">
+    <section id="skills" className="w-full space-y-6">
       <div className="flex gap-3">
         <span className="text-3xl font-bold">|</span>
         <p className="text-3xl font-semibold">My Stack</p>
