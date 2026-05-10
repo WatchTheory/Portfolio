@@ -9,7 +9,7 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
   const project = projects.find(
-    (p) => p.name.toLowerCase().replace(/\s+/g, "-") === slug
+    (p) => p.name.toLowerCase().replace(/\s+/g, "-") === slug,
   );
 
   if (!project) {
