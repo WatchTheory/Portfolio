@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="flex shrink-0 items-center justify-center">
             {/* avatar */}
             <img
-              src="/public/assets/musashi.svg"
+              src={`${import.meta.env.BASE_URL}assets/musashi.svg`}
               alt="profile"
               className="block h-35 w-35 shrink-0 rounded-full border-2 border-border object-cover object-center p-1 shadow-sm sm:h-40 sm:w-40"
             />
