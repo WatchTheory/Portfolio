@@ -2,6 +2,16 @@
 
 A personal portfolio built with React and Vite that showcases projects, blogs, skills, GitHub activity, and a small visitor counter in the footer.
 
+## Star History
+
+<a href="https://www.star-history.com/?repos=CharanMunur%2FPortfolio&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=CharanMunur/Portfolio&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=CharanMunur/Portfolio&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=CharanMunur/Portfolio&type=date&legend=top-left" />
+ </picture>
+</a>
+
 ## Stack
 
 - React 19
