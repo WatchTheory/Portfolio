@@ -6,7 +6,7 @@ export interface Project {
   imgSrc: string;
   description: string;
   techStack: TechItem[];
-  liveLink: string;
+  // liveLink: string;
   githubLink: string;
   about: string;
   features: string[];
@@ -14,31 +14,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: "Shrtn",
-    imgSrc: "/projects/shrtn.png",
+    name: "Salary Prediction",
+    imgSrc: "/projects/data_salaries_shot.png",
     description:
-      "Shorten your links, track every click. See who's visiting — by browser, OS, and date. Built for speed with Redis-backed redirects.",
+      "A machine learning project that explores what drives salary differences across data analyst roles",
     about:
-      "A full-stack URL shortening service built for real deployment. Paste a long URL, get a short link at shrtn.fun. Behind the scenes, every redirect hits Redis first — falling back to PostgreSQL only on a cache miss. Click analytics track browser, OS, and date breakdowns per link. Auth is stateless JWT with full OTP email verification and forgot/reset password flow via Resend.",
+      "Using XGBoost, a gradient boosting algorithm, to predict salary based on various factors.",
     features: [
-      "Base62 short code generation from PostgreSQL auto-increment IDs — no collisions, no randomness needed",
-      "Redis cache-aside on redirect path — zero DB queries on cache hit, 24h TTL",
-      "Click analytics per link: Browser breakdown, OS breakdown, click timeline, last 5 clicks",
-      "JWT authentication with OTP email verification via Resend (noreply@shrtn.fun)",
-      "Enable/disable toggle per link with immediate Redis cache eviction",
-      "25 URLs per user, 30-day auto-expiry, grouped click counts in a single JPQL query",
-      "User-Agent parsing via uap-java — browser and OS extracted at write time, aggregated at read time",
-      "Analytics responses cached in Redis and evicted on every new click — always fresh without polling",
-      "Deployed across Render (Docker) and Vercel with custom domain shrtn.fun",
+      "Data wrangling — multi-format cleaning across 8 columns, regex, custom functions, cross-column contamination handling",
+      "Feature engineering — ordinal encoding, geographic cost-of-living index, IQR outlier thresholding",
+      "ML pipeline design — sklearn Pipeline with imputer + scaler + model, fit isolation to training data only",
+      "Model comparison — parallel training and evaluation of 4 regressors, train/test R² with overfit gap analysis",
+      "Analytical communication — documented limitations, root cause analysis, and next-step roadmap",
     ],
     techStack: [
       projectTech.python,
       projectTech.pandas,
+      projectTech.numpy,
       projectTech.sciktlearn,
-      projectTech.Bash,
       projectTech.excel,
+      projectTech.MySQL,
+      projectTech.streamlit,
     ],
-    liveLink: "https://app.Salary-Prediction.fun",
     githubLink: "https://github.com/WatchTheory/salary-prediction",
   },
   {
@@ -65,7 +62,7 @@ export const projects: Project[] = [
       projectTech.vite,
       projectTech.monaco,
     ],
-    liveLink: "https://markdown-editor-v1.netlify.app/",
+    // liveLink: "https://markdown-editor-v1.netlify.app/",
     githubLink: "https://github.com/CharanMunur/markdown-editor",
   },
   {
@@ -90,7 +87,7 @@ export const projects: Project[] = [
       projectTech.commander,
       projectTech.execa,
     ],
-    liveLink: "https://www.npmjs.com/package/shadcn-scaffold",
+    // liveLink: "https://www.npmjs.com/package/shadcn-scaffold",
     githubLink: "https://github.com/CharanMunur/shadcn-scaffold",
   },
   {
@@ -117,7 +114,7 @@ export const projects: Project[] = [
       projectTech.motion,
       projectTech.shadcnui,
     ],
-    liveLink: "https://supertodo-v1.netlify.app/",
+    // liveLink: "https://supertodo-v1.netlify.app/",
     githubLink: "https://github.com/CharanMunur/supertodo",
   },
 ];

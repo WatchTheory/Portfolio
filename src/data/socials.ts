@@ -30,8 +30,8 @@ export const socials: SocialLink[] = [
     href: "mailto:KComaduran3@Outlook.com",
   },
   {
-    name: "Leetcode",
-    icon: "/social/leetcode.svg",
-    href: "https://leetcode.com/u/CharanMunur/",
+    name: "CodeWars",
+    icon: "/social/codewars.svg",
+    href: "https://www.codewars.com/users/AlienAstronaut",
   },
 ];

@@ -34,7 +34,7 @@ export const frontendSkills: TechItem[] = [
   { name: "Matplotlib", icon: "/tech/Matplotlib.svg" },
   { name: "Seaborn", icon: "/tech/seaborn.svg" },
   { name: "Pandas", icon: "/tech/Pandas.svg" },
-  { name: "NumPy", icon: "/tech/NumPy.svg" },
+  { name: "Numpy", icon: "/tech/Numpy.svg" },
   { name: "Plotly", icon: "/tech/Plotly.svg" },
   { name: "TensorFlow", icon: "/tech/TensorFlow.svg" },
 
@@ -131,7 +131,7 @@ export const projectTech = {
   excel: { name: "Excel", icon: "/tech/excel.svg" },
   sciktlearn: { name: "Scikit-learn", icon: "/tech/scikit-learn.svg" },
   pandas: { name: "Pandas", icon: "/tech/Pandas.svg" },
-  numpy: { name: "NumPy", icon: "/tech/Numpy.svg" },
+  numpy: { name: "Numpy", icon: "/tech/Numpy.svg" },
   mathplot: { name: "Matplotlib", icon: "/tech/Matplotlib.svg" },
   seaborn: { name: "Seaborn", icon: "/tech/seaborn.svg" },
   streamlit: { name: "Streamlit", icon: "/tech/streamlit.svg" },
