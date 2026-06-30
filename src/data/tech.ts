@@ -135,6 +135,9 @@ export const projectTech = {
   mathplot: { name: "Matplotlib", icon: "/tech/Matplotlib.svg" },
   seaborn: { name: "Seaborn", icon: "/tech/seaborn.svg" },
   streamlit: { name: "Streamlit", icon: "/tech/streamlit.svg" },
+  TensorFlow: { name: "TensorFlow", icon: "/tech/TensorFlow.svg" },
+  Plotly: { name: "Plotly", icon: "/tech/Plotly.svg" },
+  powerbi: { name: "Power BI", icon: "/tech/powerbi.svg" },
 
   R: { name: "R", icon: "/tech/R.svg" },
   DAX: { name: "DAX", icon: "/tech/DAX.svg" },
