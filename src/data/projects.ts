@@ -15,7 +15,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: "Salary Prediction Report",
-    imgSrc: "/projects/data_salaries_shot.png",
+    imgSrc: "/projects/salary-prediction.png",
     description:
       "A machine learning project that explores what drives salary differences across data analyst roles",
     about:
@@ -41,7 +41,7 @@ export const projects: Project[] = [
   },
   {
     name: "Department of Defense (D.O.D.) National Defense Education Program (NDEP)",
-    imgSrc: "/projects/markdowneditor.png",
+    imgSrc: "/projects/dod-network.png",
     description:
       "Department of Defense (D.O.D.) National Defense Education Program (NDEP).",
     about:
@@ -66,7 +66,7 @@ export const projects: Project[] = [
   },
   {
     name: "Alumni Analysis",
-    imgSrc: "/projects/shadcn-scaffold.png",
+    imgSrc: "/projects/alumni_analysis.png",
     description:
       "Analyze the alumni dataset using Pandas, Jupyter Notebook, Python to extract insights, perform data cleaning, and generate summary statistics.",
     about:
@@ -91,7 +91,7 @@ export const projects: Project[] = [
   },
   {
     name: "Crude Oil Report",
-    imgSrc: "/projects/supertodo.png",
+    imgSrc: "/projects/crude-oil.png",
     description:
       "Power BI Dashboard descripting oil production in the U.S for the Gulf Coast Field(PADD 3) targeting Texas role in the Oil Supply",
     about:
@@ -105,6 +105,32 @@ export const projects: Project[] = [
     // liveLink: "https://supertodo-v1.netlify.app/",
     githubLink: "https://github.com/WatchTheory/Crude-Oil-Report",
   },
+  {
+    name: "Databricks Project",
+    imgSrc: "/projects/work-in-progress.png",
+    description: "Will update when more details are available. Check back soon for more updates",
+    about: "Project is currently in progress.",
+    features: [
+      "Coming soon"
+    ],
+    techStack: [
+      projectTech.python,
+      projectTech.numpy,
+      projectTech.pandas,
+      projectTech.mathplot,
+      projectTech.Plotly,
+      projectTech.SQLite,
+      projectTech.databricks,
+    ],
+    // liveLink: "",
+    githubLink: "",
+  },
+
+
+
+
+
+
 ];
 
 // End of projects data

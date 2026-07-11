@@ -144,11 +144,15 @@ export const projectTech = {
   Flask: { name: "Flask", icon: "/tech/flask.svg" },
   FastAPI: { name: "FastAPI", icon: "/tech/fastapi.svg" },
   SQL: { name: "SQL", icon: "/tech/sql.svg" },
+  SQLite: { name: "SQLite", icon: "/tech/sqlite.svg" },
   PostgreSQL: { name: "PostgreSQL", icon: "/tech/postgresql.svg" },
   MySQL: { name: "MySQL", icon: "/tech/mysql.svg" },
   MongoDB: { name: "MongoDB", icon: "/tech/mongodb.svg" },
   Django: { name: "Django", icon: "/tech/django.svg" },
   Bootstrap: { name: "Bootstrap", icon: "/tech/bootstrap.svg" },
+
+  databricks: { name: "Databricks", icon: "/tech/databricks.svg" },
+
 
   LinuxTemerial: { name: "Temerial", icon: "/tech/ghostty.svg" },
   PowerShell: { name: "PowerShell", icon: "/tech/Powershell.svg" },
