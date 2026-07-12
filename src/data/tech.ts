@@ -1,4 +1,4 @@
-import { BiLogoDjango } from "react-icons/bi";
+// import { BiLogoDjango } from "react-icons/bi";
 
 export interface TechItem {
   name: string;

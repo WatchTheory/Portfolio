@@ -6,7 +6,7 @@ export interface Project {
   imgSrc: string;
   description: string;
   techStack: TechItem[];
-  // liveLink: string;
+  liveLink: string;
   githubLink: string;
   about: string;
   features: string[];
@@ -36,7 +36,7 @@ export const projects: Project[] = [
       projectTech.MySQL,
       projectTech.streamlit,
     ],
-    // liveLink: "",
+    liveLink: "",
     githubLink: "https://github.com/WatchTheory/salary-prediction",
   },
   {
@@ -61,7 +61,7 @@ export const projects: Project[] = [
       projectTech.jupyter,
       projectTech.TensorFlow,
     ],
-    // liveLink: "https://markdown-editor-v1.netlify.app/",
+    liveLink: "",
     githubLink: "https://github.com/WatchTheory/D.O.D-Nerual-Network",
   },
   {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
       projectTech.numpy,
       projectTech.Plotly,
     ],
-    // liveLink: "https://www.npmjs.com/package/shadcn-scaffold",
+    liveLink: "",
     githubLink: "https://github.com/WatchTheory/Alumni-Analysis",
   },
   {
@@ -102,7 +102,7 @@ export const projects: Project[] = [
       "Learned Power BI from the groud up ",
     ],
     techStack: [projectTech.excel, projectTech.powerbi],
-    // liveLink: "https://supertodo-v1.netlify.app/",
+    liveLink: "https://supertodo-v1.netlify.app/",
     githubLink: "https://github.com/WatchTheory/Crude-Oil-Report",
   },
   {
@@ -122,7 +122,7 @@ export const projects: Project[] = [
       projectTech.SQLite,
       projectTech.databricks,
     ],
-    // liveLink: "",
+    liveLink: "",
     githubLink: "",
   },
 
