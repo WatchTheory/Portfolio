@@ -102,7 +102,7 @@ export const projects: Project[] = [
       "Learned Power BI from the groud up ",
     ],
     techStack: [projectTech.excel, projectTech.powerbi],
-    liveLink: "https://supertodo-v1.netlify.app/",
+    liveLink: "",      //"https://supertodo-v1.netlify.app/"
     githubLink: "https://github.com/WatchTheory/Crude-Oil-Report",
   },
     {
