@@ -105,6 +105,24 @@ export const projects: Project[] = [
     liveLink: "https://supertodo-v1.netlify.app/",
     githubLink: "https://github.com/WatchTheory/Crude-Oil-Report",
   },
+    {
+    name: "Netflix Analysis",
+    imgSrc: "/projects/work-in-progress.png",
+    description: "Neflix Tableau Dashboard",
+    about: "An interactive BI dashboard analyzing Netflix viewership patterns across international markets.",
+    features: [
+      "Interactive country-level heat map — geographic viewership distribution",
+      "Time-series line charts — monthly/quarterly trend analysis",
+      "Filterable country selectors — self-service exploration",
+      "Content category breakdown — top genres by region",
+    ],
+    techStack: [
+      projectTech.Tableau,
+  
+    ],
+    liveLink: "",
+    githubLink: "https://github.com/WatchTheory/Netflix-Analysis",
+  },
   {
     name: "Databricks Project",
     imgSrc: "/projects/work-in-progress.png",

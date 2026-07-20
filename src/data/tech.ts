@@ -138,6 +138,8 @@ export const projectTech = {
   TensorFlow: { name: "TensorFlow", icon: "/tech/TensorFlow.svg" },
   Plotly: { name: "Plotly", icon: "/tech/Plotly.svg" },
   powerbi: { name: "Power BI", icon: "/tech/powerbi.svg" },
+  Tableau: { name: "Tableau", icon: "/tech/tableau.svg" },
+
 
   R: { name: "R", icon: "/tech/R.svg" },
   DAX: { name: "DAX", icon: "/tech/DAX.svg" },
