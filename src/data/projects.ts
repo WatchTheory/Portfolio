@@ -107,7 +107,7 @@ export const projects: Project[] = [
   },
     {
     name: "Netflix Analysis",
-    imgSrc: "/projects/work-in-progress.png",
+    imgSrc: "/projects/Neflix_Dashboard.png",
     description: "Neflix Tableau Dashboard",
     about: "An interactive BI dashboard analyzing Netflix viewership patterns across international markets.",
     features: [
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     ],
     techStack: [
       projectTech.Tableau,
-  
+
     ],
     liveLink: "",
     githubLink: "https://github.com/WatchTheory/Netflix-Analysis",
