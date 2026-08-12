@@ -131,7 +131,7 @@ export const projectTech = {
   excel: { name: "Excel", icon: "/tech/excel.svg" },
   sciktlearn: { name: "Scikit-learn", icon: "/tech/scikit-learn.svg" },
   pandas: { name: "Pandas", icon: "/tech/Pandas.svg" },
-  numpy: { name: "numpy", icon: "/tech/Numpy.svg" },
+  numpy: { name: "Numpy", icon: "/tech/Numpy.svg" },
 
   mathplot: { name: "Matplotlib", icon: "/tech/Matplotlib.svg" },
   seaborn: { name: "Seaborn", icon: "/tech/seaborn.svg" },
