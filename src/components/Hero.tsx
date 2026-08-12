@@ -96,7 +96,7 @@ const Hero = () => {
             </a>
             <a
               /* Google Drive */
-              href="https://drive.google.com/file/d/1AF0owusJPd1yf1vRwCJcaex04pnEVL_H/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Fdw9D1vqhNCwTsrJO-HJ7XoviAQ8tc2k/view?usp=drive_link"
               target="_blank"
               rel="noreferrer"
             >
